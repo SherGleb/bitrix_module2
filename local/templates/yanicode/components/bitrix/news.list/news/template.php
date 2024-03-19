@@ -25,6 +25,7 @@ $this->setFrameMode(true);
 					<div class="blog_article"><? echo $arItem["PREVIEW_TEXT"]; ?></div>
 				<? endif; ?>
 			</div>
-		<? endforeach; ?>
-	</div>
-</section>
+			</a>
+		<? endforeach; ?> 
+		</div>
+	</section>

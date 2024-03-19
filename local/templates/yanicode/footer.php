@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="footer__law">
-                    YANICODE 2020 © ВСЕ ПРАВА ЗАЩИЩЕНЫ.
+                    YANICODE <?php echo date ( 'Y' ) ; ?> © ВСЕ ПРАВА ЗАЩИЩЕНЫ.
                     ЛЮБОЕ ИСПОЛЬЗОВАНИЕ МАТЕРИАЛОВ
                     ВОЗМОЖНО ТОЛЬКО С СОГЛАСИЯ
                     ПРАВООБЛАДАТЕЛЯ.
@@ -56,7 +56,6 @@
             </div>
         </div>
     </footer>
-<script src="<?=SITE_TEMPLATE_PATH?>/assets/js/build.js"></script>
 </body>
 
 </html>

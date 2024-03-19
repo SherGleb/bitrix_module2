@@ -1,4 +1,7 @@
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
+<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+use Bitrix\Main\Page\Asset;
+$asset = Asset::getInstance();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -9,7 +12,10 @@
     <meta name="format-detection" content="telephone=no">
     <title><? $APPLICATION->ShowTitle(); ?></title>
     <? $APPLICATION->ShowHead();  ?>
-    <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/assets/template_styles.css">
+	<? 
+    $asset->addCss(SITE_TEMPLATE_PATH . "/assets/template_styles.css"); 
+    $asset->addJs(SITE_TEMPLATE_PATH . "/assets/js/build.js");
+    ?> 
 </head>
 
 <body>
@@ -45,7 +51,7 @@
 						);?>
                     </nav>
                     <div class="header__phone">
-                        <a href="tel:+79114510616">+79114510616</a>
+                        <a href="tel:<?php $APPLICATION->IncludeFile(SITE_DIR . "include/header/phone.php", [], ["SHOW_BORDER" => false, "MODE" => "php"]); ?>"><?php $APPLICATION->IncludeFile(SITE_DIR . "include/header/phone.php", [], ["MODE" => "php"]); ?></a>
                     </div>
                 </div>
             </div>
@@ -53,43 +59,4 @@
     </header>
     <main class="website-workarea">
 
-        <section class="banner banner_before1" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/assets/images/banner_blog.jpg');">
-            <div class="banner-wrapper">
-                <div class="container">
-                    <div class="banner__content">
-                        <p>Более 20-ти лет управляю<br />
-                            творческими проектами в<br />
-                            брендинге.</p>
-                        <p><b class="text_gold">
-                                Моя личная миссия: </b>делать<br />
-                            вас богаче, а ваших<br />
-                            клиентов счастливее!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="stages">
-                    <div class="stages__item">
-                        <div class="stages__step">01</div>
-                        <div class="stages__desc-step">АУДИТ</div>
-                    </div>
-                    <div class="stages__item">
-                        <div class="stages__step">02</div>
-                        <div class="stages__desc-step">СТРАТЕГИЯ</div>
-                    </div>
-                    <div class="stages__item">
-                        <div class="stages__step">03</div>
-                        <div class="stages__desc-step">КОНЦЕПЦИЯ</div>
-                    </div>
-                    <div class="stages__item">
-                        <div class="stages__step">04</div>
-                        <div class="stages__desc-step">ДИЗАЙН</div>
-                    </div>
-                    <div class="stages__item">
-                        <div class="stages__step">05</div>
-                        <div class="stages__desc-step">КОММУНИКАЦИИ</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
