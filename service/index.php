@@ -129,22 +129,27 @@ Array("MODE"=>"")
 </div>
 <div>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:form.result.new",
-	"calc",
-	Array(
+	"bitrix:form.result.new", 
+	"calc", 
+	array(
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
 		"CHAIN_ITEM_LINK" => "",
 		"CHAIN_ITEM_TEXT" => "",
-		"EDIT_URL" => "result_edit.php",
+		"EDIT_URL" => "",
 		"IGNORE_CUSTOM_TEMPLATE" => "N",
-		"LIST_URL" => "result_list.php",
+		"LIST_URL" => "",
 		"SEF_MODE" => "N",
-		"SUCCESS_URL" => "",
+		"SUCCESS_URL" => "/index.php",
 		"USE_EXTENDED_ERRORS" => "N",
-		"VARIABLE_ALIASES" => array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID",),
-		"WEB_FORM_ID" => "1"
-	)
+		"WEB_FORM_ID" => "1",
+		"COMPONENT_TEMPLATE" => "calc",
+		"VARIABLE_ALIASES" => array(
+			"WEB_FORM_ID" => "WEB_FORM_ID",
+			"RESULT_ID" => "RESULT_ID",
+		)
+	),
+	false
 );?>
 </div>
 <div>
