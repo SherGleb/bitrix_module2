@@ -1,17 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Услуги");
-?>
-
-<?
+?><?
 $APPLICATION->IncludeFile(
 	SITE_DIR."include/banner_services.php", 
 Array(), 
 Array("MODE"=>"") 
 );
 ?>
-
-
 <div>
 	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
@@ -133,27 +129,22 @@ Array("MODE"=>"")
 </div>
 <div>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:form.result.new", 
-	"calculate-project", 
-	array(
+	"bitrix:form.result.new",
+	"calc",
+	Array(
 		"CACHE_TIME" => "3600",
 		"CACHE_TYPE" => "A",
 		"CHAIN_ITEM_LINK" => "",
 		"CHAIN_ITEM_TEXT" => "",
-		"COMPONENT_TEMPLATE" => "calculate-project",
-		"EDIT_URL" => "list_edit.php",
+		"EDIT_URL" => "result_edit.php",
 		"IGNORE_CUSTOM_TEMPLATE" => "N",
-		"LIST_URL" => "index.php",
+		"LIST_URL" => "result_list.php",
 		"SEF_MODE" => "N",
 		"SUCCESS_URL" => "",
 		"USE_EXTENDED_ERRORS" => "N",
-		"WEB_FORM_ID" => "1",
-		"VARIABLE_ALIASES" => array(
-			"WEB_FORM_ID" => "WEB_FORM_ID",
-			"RESULT_ID" => "RESULT_ID",
-		)
-	),
-	false
+		"VARIABLE_ALIASES" => array("RESULT_ID"=>"RESULT_ID","WEB_FORM_ID"=>"WEB_FORM_ID",),
+		"WEB_FORM_ID" => "1"
+	)
 );?>
 </div>
 <div>
